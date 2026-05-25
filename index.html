@@ -1,21 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>عيد أضحى مبارك ❤</title>
     <style>
-        body {
+        /* منع أي تحرك أفقي أو سكرول للشاشة بالكامل */
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             margin: 0;
             padding: 0;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background: linear-gradient(135deg, #f4f7f6 0%, #e2ece9 100%);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             perspective: 1000px;
         }
 
@@ -132,7 +138,6 @@
             height: 60px;
             border-radius: 50%;
         }
-
         .balloon-style::after {
             content: "";
             position: absolute;
@@ -155,9 +160,8 @@
                 transform: translateY(0) rotate(0deg);
                 opacity: 0.9;
             }
-
             100% {
-                transform: translateY(-115vh) rotate(20deg);
+                transform: translateY(-120vh) rotate(20deg);
                 opacity: 0;
             }
         }
@@ -177,13 +181,11 @@
                 transform: translateY(0) scale(0.5);
                 opacity: 1;
             }
-
             50% {
                 transform: translateX(50px) scale(1.2);
             }
-
             100% {
-                transform: translateY(-115vh) translateX(-50px) scale(0.8);
+                transform: translateY(-120vh) translateX(-50px) scale(0.8);
                 opacity: 0;
             }
         }
@@ -191,25 +193,21 @@
         .card-back::-webkit-scrollbar {
             width: 6px;
         }
-
         .card-back::-webkit-scrollbar-thumb {
             background-color: #1b6651;
             border-radius: 10px;
         }
 
-        /* 📱 تعديلات مخصصة لشاشات الموبايل (Responsive Design) */
+        /* 📱 تعديلات مخصصة لشاشات الموبايل */
         @media (max-width: 480px) {
             .card-container {
                 width: 90vw;
-                /* بياخد 90% من عرض شاشة الفون */
                 height: 80vh;
-                /* بياخد 80% من طول الشاشة عشان يستوعب الكلام */
                 max-height: 580px;
             }
 
             .card-face {
                 padding: 20px;
-                /* تقليل المسافات عشان نكسب مساحة للكلام */
             }
 
             .card-front h2 {
@@ -223,7 +221,6 @@
 
             .card-back p {
                 font-size: 14.5px;
-                /* تصغير الخط سنة بسيطة على الموبايل للراحة */
                 line-height: 1.6;
             }
 
@@ -236,6 +233,7 @@
 </head>
 
 <body>
+
     <div class="card-container" id="myCard" onclick="openCard()">
         <!-- الواجهة الخارجية -->
         <div class="card-face card-front">
@@ -248,14 +246,12 @@
         <div class="card-face card-back">
             <h3>عيد أضحى مبارك يا كل أعيادي ❤</h3>
             <p>
-                بصي، أنا يمكن مش بعرف أزوق الكلام أوي، بس اللي عايزك تتأكدي منه إني مش
-                شايف في الدنيا دي كلها غيرك. 😍 حبك هو اللي مخليني عايز أكون أحسن كل
-                يوم، ووجودك جنبي بيديني طاقة تهد جبال.. كل سنة وإنتِ كل دنيتي وحياتي.
-                🌍❤ <br /><br />
-                معاكي عرفت يعني إيه حد يبقى خايف عليا بجد ومستحملني وباقي عليا في كل
-                الظروف. إنتِ نعمة كبيرة من ربنا، وبدعي في كل وقت إنه يحفظك ليا ونفضل
-                دايماً سند لبعض ومكملين طريقنا سوا لحد الآخر. 🗝✨ <br /><br />
-                كل عام وإنتِ معايا يا حبيبتي، وعيد سعيد عليكي يا رب! 🐏🎈<br /><br />
+                بصي، أنا يمكن مش بعرف أزوق الكلام أوي، بس اللي عايزك تتأكدي منه إني مش شايف في الدنيا دي كلها غيرك. 😍
+                حبك هو اللي مخليني عايز أكون أحسن كل يوم، ووجودك جنبي بيديني طاقة تهد جبال.. كل سنة وإنتِ كل دنيتي
+                وحياتي. 🌍❤ <br><br>
+                معاكي عرفت يعني إيه حد يبقى خايف عليا بجد ومستحملني وباقي عليا في كل الظروف. إنتِ نعمة كبيرة من ربنا،
+                وبدعي في كل وقت إنه يحفظك ليا ونفضل دايماً سند لبعض ومكملين طريقنا سوا لحد الآخر. 🗝✨ <br><br>
+                كل عام وإنتِ معايا يا حبيبتي، وعيد سعيد عليكي يا رب! 🐏🎈<br><br>
                 <strong>بحبك يا قرة عيني 🌍❤</strong>
             </p>
         </div>
@@ -263,9 +259,9 @@
 
     <script>
         function openCard() {
-            const card = document.getElementById("myCard");
-            if (!card.classList.contains("open")) {
-                card.classList.add("open");
+            const card = document.getElementById('myCard');
+            if (!card.classList.contains('open')) {
+                card.classList.add('open');
 
                 // تشغيل العناصر الطايرة والخرفان
                 setInterval(createFloatingItem, 250);
@@ -274,29 +270,21 @@
         }
 
         function createFloatingItem() {
-            const item = document.createElement("div");
-            item.classList.add("floating-item");
+            const item = document.createElement('div');
+            item.classList.add('floating-item');
 
-            // اختيار عشوائي: 50% بالونة ملونة، 50% قلب أحمر
             if (Math.random() > 0.5) {
-                item.classList.add("balloon-style");
-                const colors = [
-                    "#ff4d6d",
-                    "#ffb3c6",
-                    "#4ea8de",
-                    "#56ab2f",
-                    "#a8ff78",
-                    "#ffb703",
-                ];
-                item.style.backgroundColor =
-                    colors[Math.floor(Math.random() * colors.length)];
+                item.classList.add('balloon-style');
+                const colors = ['#ff4d6d', '#ffb3c6', '#4ea8de', '#56ab2f', '#a8ff78', '#ffb703'];
+                item.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             } else {
-                item.classList.add("heart-style");
-                item.innerHTML = "❤";
+                item.classList.add('heart-style');
+                item.innerHTML = '❤';
             }
 
-            item.style.left = Math.random() * 100 + "vw";
-            item.style.animationDuration = Math.random() * 3 + 4 + "s";
+            // 🛠 تعديل هنا: خليناها تبعد عن الحواف بنسبة 5% يمين وشمال عشان متخرجش برة الشاشة
+            item.style.left = (Math.random() * 85 + 5) + 'vw';
+            item.style.animationDuration = (Math.random() * 3 + 4) + 's';
 
             document.body.appendChild(item);
             setTimeout(() => {
@@ -305,13 +293,15 @@
         }
 
         function createSheep() {
-            const sheeps = ["🐏", "🐑"];
-            const sheep = document.createElement("div");
-            sheep.classList.add("eid-sheep");
+            const sheeps = ['🐏', '🐑'];
+            const sheep = document.createElement('div');
+            sheep.classList.add('eid-sheep');
 
             sheep.innerHTML = sheeps[Math.floor(Math.random() * sheeps.length)];
-            sheep.style.left = Math.random() * 100 + "vw";
-            sheep.style.animationDuration = Math.random() * 2 + 4 + "s";
+            
+            // 🛠 تعديل هنا أيضاً للحفاظ على الخرفان جوة الكادر
+            sheep.style.left = (Math.random() * 80 + 10) + 'vw';
+            sheep.style.animationDuration = (Math.random() * 2 + 4) + 's';
 
             document.body.appendChild(sheep);
             setTimeout(() => {
