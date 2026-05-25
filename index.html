@@ -27,8 +27,8 @@
 
         /* حاوية الكارت الأساسية */
         .card-container {
-            width: 380px;
-            height: 540px;
+            width: 390px;
+            height: 560px; /* زودت الطول سنة عشان يستوعب الفواصل الجديدة والخط الكبير */
             position: relative;
             transform-style: preserve-3d;
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -50,7 +50,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            padding: 25px;
+            padding: 30px;
             box-sizing: border-box;
         }
 
@@ -64,16 +64,16 @@
         }
 
         .card-front h2 {
-            font-size: 28px;
+            font-size: 30px;
             color: #d4af37;
             margin-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .card-front p {
-            font-size: 16px;
+            font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         /* الزرار الدهبي */
@@ -81,8 +81,8 @@
             background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
             color: #0f4c3a;
             border: none;
-            padding: 12px 35px;
-            font-size: 18px;
+            padding: 14px 38px;
+            font-size: 19px;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
@@ -98,31 +98,45 @@
             justify-content: flex-start;
             align-items: center;
             overflow-y: auto;
+            padding: 25px;
         }
 
         .card-back h3 {
             color: #1b6651;
-            font-size: 22px;
+            font-size: 24px;
             margin-top: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-bottom: 2px dashed #d4af37;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             width: 100%;
             text-align: center;
             flex-shrink: 0;
         }
 
-        .card-back p {
-            color: #2b2b2b;
-            font-size: 16px;
-            line-height: 1.7;
-            text-align: justify;
-            margin: 0;
-            font-weight: 500;
+        /* تنسيق الفقرات الجديد والمكبر */
+        .message-content {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px; /* بيعمل مسافة وتناسق تلقائي بين الفقرات */
         }
 
-        /* العناصر الطايرة (بالونات أو قلوب) */
+        .message-content p {
+            color: #222222; /* لون مريح وواضح جداً */
+            font-size: 18px; /* تكبير الخط */
+            line-height: 1.9; /* زيادة المسافة بين السطور */
+            text-align: center; /* تنسيق في المنتصف مبهج للموبايل */
+            margin: 0;
+            font-weight: 600; /* خط أوضح وأثقل سنة */
+        }
+
+        .message-content .highlight-text {
+            font-size: 20px;
+            color: #1b6651;
+            margin-top: 5px;
+        }
+
+        /* العناصر الطايرة */
         .floating-item {
             position: absolute;
             pointer-events: none;
@@ -132,7 +146,6 @@
             z-index: 1;
         }
 
-        /* ستايل البالونة بالتحديد */
         .balloon-style {
             width: 45px;
             height: 60px;
@@ -148,7 +161,6 @@
             background: #999;
         }
 
-        /* ستايل القلب بالتحديد */
         .heart-style {
             font-size: 35px;
             color: #ff4d6d;
@@ -201,9 +213,9 @@
         /* 📱 تعديلات مخصصة لشاشات الموبايل */
         @media (max-width: 480px) {
             .card-container {
-                width: 90vw;
-                height: 80vh;
-                max-height: 580px;
+                width: 92vw;
+                height: 82vh;
+                max-height: 600px;
             }
 
             .card-face {
@@ -211,22 +223,26 @@
             }
 
             .card-front h2 {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .card-back h3 {
-                font-size: 19px;
-                margin-bottom: 10px;
+                font-size: 21px;
+                margin-bottom: 15px;
             }
 
-            .card-back p {
-                font-size: 14.5px;
-                line-height: 1.6;
+            .message-content p {
+                font-size: 16.5px; /* مقاس مثالي ومقروء جداً للموبايل */
+                line-height: 1.8;
+            }
+
+            .message-content .highlight-text {
+                font-size: 18.5px;
             }
 
             .open-btn {
-                padding: 10px 28px;
-                font-size: 16px;
+                padding: 12px 32px;
+                font-size: 17px;
             }
         }
     </style>
@@ -235,25 +251,25 @@
 <body>
 
     <div class="card-container" id="myCard" onclick="openCard()">
-        <!-- الواجهة الخارجية -->
         <div class="card-face card-front">
             <h2>عيد أضحى مبارك ✨</h2>
             <p>لأغلى الناس على قلبي..</p>
             <button class="open-btn">افتح عديتك ✉</button>
         </div>
 
-        <!-- المحتوى الداخلي الدافي -->
         <div class="card-face card-back">
             <h3>عيد أضحى مبارك يا كل أعيادي ❤</h3>
-            <p>
-                بصي، أنا يمكن مش بعرف أزوق الكلام أوي، بس اللي عايزك تتأكدي منه إني مش شايف في الدنيا دي كلها غيرك. 😍
-                حبك هو اللي مخليني عايز أكون أحسن كل يوم، ووجودك جنبي بيديني طاقة تهد جبال.. كل سنة وإنتِ كل دنيتي
-                وحياتي. 🌍❤ <br><br>
-                معاكي عرفت يعني إيه حد يبقى خايف عليا بجد ومستحملني وباقي عليا في كل الظروف. إنتِ نعمة كبيرة من ربنا،
-                وبدعي في كل وقت إنه يحفظك ليا ونفضل دايماً سند لبعض ومكملين طريقنا سوا لحد الآخر. 🗝✨ <br><br>
-                كل عام وإنتِ معايا يا حبيبتي، وعيد سعيد عليكي يا رب! 🐏🎈<br><br>
-                <strong>بحبك يا قرة عيني 🌍❤</strong>
-            </p>
+            <div class="message-content">
+                <p>بصي، أنا يمكن مش بعرف أزوق الكلام أوي، بس اللي عايزك تتأكدي منه إني مش شايف في الدنيا دي كلها غيرك. 😍</p>
+                
+                <p>حبك هو اللي مخليني عايز أكون أحسن كل يوم، ووجودك جنبي بيديني طاقة تهد جبال.. كل سنة وإنتِ كل دنيتي وحياتي. 🌍❤</p>
+                
+                <p>معاكي عرفت يعني إيه حد يبقى خايف عليا بجد ومستحملني وباقي عليا في كل الظروف. إنتِ نعمة كبيرة من ربنا، وبدعي في كل وقت إنه يحفظك ليا ونفضل دايماً سند لبعض ومكملين طريقنا سوا لحد الآخر. 🗝✨</p>
+                
+                <p class="highlight-text"><strong>كل عام وإنتِ معايا يا حبيبتي، وعيد سعيد عليكي يا رب! 🐏🎈</strong></p>
+                
+                <p><strong>بحبك يا قرة عيني 🌍❤</strong></p>
+            </div>
         </div>
     </div>
 
@@ -282,7 +298,6 @@
                 item.innerHTML = '❤';
             }
 
-            // 🛠 تعديل هنا: خليناها تبعد عن الحواف بنسبة 5% يمين وشمال عشان متخرجش برة الشاشة
             item.style.left = (Math.random() * 85 + 5) + 'vw';
             item.style.animationDuration = (Math.random() * 3 + 4) + 's';
 
@@ -299,7 +314,6 @@
 
             sheep.innerHTML = sheeps[Math.floor(Math.random() * sheeps.length)];
             
-            // 🛠 تعديل هنا أيضاً للحفاظ على الخرفان جوة الكادر
             sheep.style.left = (Math.random() * 80 + 10) + 'vw';
             sheep.style.animationDuration = (Math.random() * 2 + 4) + 's';
 
